@@ -22,7 +22,11 @@ class CardItem{
       title: 'Ai Lev-1 batch3',
       subtitle: "Feb 28th 2022 at 2 pm",
     ),
-
+ const CardItem(
+     color:Colors.orange,
+      title: 'Ai Lev-1 batch5',
+      subtitle: "Feb 28th 2022 at 12 pm",
+    ),
  
     
   ];
