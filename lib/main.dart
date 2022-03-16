@@ -228,16 +228,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const SizedBox(width: 20),
                   Column(
-                    children: const [
-                      CircleAvatar(
-                        radius: 20.0,
-                          backgroundImage: AssetImage('images/assignments.png'),
-                        backgroundColor: Colors.transparent,
+                    children:  [
+                      InkWell(
+                        child: const CircleAvatar(
+                          radius: 20.0,
+                            backgroundImage: AssetImage('images/assignments.png'),
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap:  () {
+                    print("Live session");
+                  },
                       ),
-                      SizedBox(
+                       const SizedBox(
                         height: 6,
                       ),
-                      Text(
+                      const Text(
                         "Live session",
                         style: TextStyle(fontSize: 10, color: Colors.white),
                       ),
@@ -245,32 +250,42 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(width: 55),
                   Column(
-                    children: const [
-                      CircleAvatar(
-                        foregroundColor: Colors.white,
-                        radius: 20.0,
-                        backgroundImage: AssetImage('images/material.png'),
-                        backgroundColor: Colors.white,
+                    children:  [
+                      InkWell(
+                        child: const CircleAvatar(
+                          foregroundColor: Colors.white,
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/material.png'),
+                          backgroundColor: Colors.white,
+                        ),
+                        onTap:  () {
+                    print("Materials");
+                  },
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 6,
                       ),
-                      Text("Materials",
+                      const Text("Materials",
                           style: TextStyle(fontSize: 10, color: Colors.white)),
                     ],
                   ),
                   const SizedBox(width: 55),
                   Column(
-                    children: const [
-                      CircleAvatar(
-                        radius: 20.0,
-                        backgroundImage: AssetImage('images/assignments.png'),
-                        backgroundColor: Colors.transparent,
+                    children:  [
+                      InkWell(
+                        child: const CircleAvatar(
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/assignments.png'),
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                    print("Assignments");
+                  },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
-                      Text(
+                      const Text(
                         "Assignments",
                         style: TextStyle(fontSize: 10, color: Colors.white),
                       ),
@@ -296,9 +311,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Row(
               children: [
-                SizedBox(width: 200),
-                // Text("DashBoard",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
-        
+                SizedBox(width: 200),        
                 TextButton(
                   onPressed: () {
                     print("DashBoard");
@@ -312,7 +325,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 SizedBox(width: 50),
-                // Text("Assignments",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
                 TextButton(
                   onPressed: () {
                     print("Assignments");
