@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:teacher_page/attendance.dart';
+import 'package:teacher_page/calender.dart';
 import 'modal.dart';
 
 void main() {
@@ -25,8 +27,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      debugShowCheckedModeBanner: false,
+
+           home: MyHomePage1()
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -67,35 +71,42 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 230, 226, 226),
+          backgroundColor: const Color.fromARGB(255, 230, 226, 226),
           title: Row(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(width:180),
-                  Image.asset(
-                 'images/Logo.png',
-                  fit: BoxFit.contain,
-                  height: 100,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(width: 180),
+              Image.asset(
+                'images/Logo.png',
+                fit: BoxFit.contain,
+                height: 100,
               ),
-              SizedBox(width: 200,),
-               Column(
-                 children: const[
-                   
-                   Text('Teacher Name',style:TextStyle(color:Colors.orange,fontWeight: FontWeight.w500)),
-                   SizedBox(height: 5,),
-                   Text('Mobile Number',style:TextStyle(color:Colors.orange,fontWeight: FontWeight.w500)),
-                 ],
-               ),
-              ],
-               
-          
-
-          ),toolbarHeight: 120,actions: [Image.asset(
-                 'images/robo.png',
-                  fit: BoxFit.fitHeight,
-                  
-              ),],
-  ),
+              const SizedBox(
+                width: 200,
+              ),
+              Column(
+                children: const [
+                  Text('Teacher Name',
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.w500)),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text('Mobile Number',
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.w500)),
+                ],
+              ),
+            ],
+          ),
+          toolbarHeight: 120,
+          actions: [
+            Image.asset(
+              'images/robo.png',
+              fit: BoxFit.fitHeight,
+            ),
+          ],
+        ),
         // body: ListView.builder(
         //                   controller: ScrollController(),
         //                 shrinkWrap: true,
@@ -115,32 +126,41 @@ class _MyHomePageState extends State<MyHomePage> {
               //   style: TextStyle(fontSize: 18),
               // ),
 
-                      Row(
-                        children: [
-                          const Padding(
-                            padding:  EdgeInsets.fromLTRB(194,15,0,0),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                            child:Text("Sessions:",style: TextStyle(color:Colors.orange,fontWeight: FontWeight.w600),)),
-                          ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(1250,15,0,0),
-               child:TextButton(
-                  onPressed: () {
-                    print("view all");
-                  },
-                  child:const Text("View all",style: TextStyle(color:Color.fromARGB(255, 6, 38, 145),fontWeight: FontWeight.w600),),
-                ),
-              
-            ),
-                        ],
+              Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(194, 15, 0, 0),
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Sessions:",
+                          style: TextStyle(
+                              color: Colors.orange,
+                              fontWeight: FontWeight.w600),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(1250, 15, 0, 0),
+                    child: TextButton(
+                      onPressed: () {
+                        print("view all");
+                      },
+                      child: const Text(
+                        "View all",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 6, 38, 145),
+                            fontWeight: FontWeight.w600),
                       ),
+                    ),
+                  ),
+                ],
+              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(170,15,0,0),
+                padding: const EdgeInsets.fromLTRB(170, 15, 0, 0),
                 child: SizedBox(
                   height: 180.0,
                   child: ListView.builder(
-                    physics: ClampingScrollPhysics(),
+                    physics: const ClampingScrollPhysics(),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
@@ -150,64 +170,75 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-               
-                
-                      
-             
-                      Row(
-                        children: [
-                           const Padding(
-                            padding:  EdgeInsets.fromLTRB(194,0,0,0),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                            child:Text("Tasks Batches",style: TextStyle(color:Colors.orange,fontWeight: FontWeight.w600),)),
-                          ),
-                           Padding(
-              padding: EdgeInsets.fromLTRB(100,0,0,0),
-              child:TextButton(
-                  onPressed: () {
-                    print("view all");
-                  },
-                  child:const Text("View all",style: TextStyle(color:Color.fromARGB(255, 6, 38, 145),fontWeight: FontWeight.w600),),
-                ),
-            
-            ),
-                        ],
+              Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(194, 0, 0, 0),
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Tasks Batches",
+                          style: TextStyle(
+                              color: Colors.orange,
+                              fontWeight: FontWeight.w600),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(100, 0, 0, 0),
+                    child: TextButton(
+                      onPressed: () {
+                        print("view all");
+                      },
+                      child: const Text(
+                        "View all",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 6, 38, 145),
+                            fontWeight: FontWeight.w600),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(170,6,0,0),
-                        child: SizedBox(width: 280,
-                     child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: items1.length,
-                          itemBuilder: (BuildContext context, int index) =>
-                              Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: taskBatch(context,
-                              item1: items1[index],
-                            ),
-                          ),
-                        ),
-                              
-                        ),
-                      )
-                    
-                  
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(170, 6, 0, 0),
+                child: SizedBox(
+                  width: 280,
+                  height:400,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: items1.length,
+                    itemBuilder: (BuildContext context, int index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: taskBatch(
+                        context,
+                        item1: items1[index],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               
-                  
-
-
+               Row(crossAxisAlignment: CrossAxisAlignment.center,
+                 children: [SizedBox(width:400),
+                   Text("nandu"),
+                   Divider(),
+                       const VerticalDivider(color: Color.fromARGB(255, 3, 44, 78),thickness: 6),
+                 ],
+               ),
+                 
+              
+          
             ])));
   }
 
   Widget topCard(BuildContext context, {required CardItem item}) =>
       Column(children: [
-        // const SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         Container(
           height: 155.0,
           width: 310.0,
           // padding: const EdgeInsets.all(10.0),
-          margin: const EdgeInsets.fromLTRB(20,0,20,0),
+          margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           decoration: BoxDecoration(
             color: item.color,
             borderRadius: BorderRadius.circular(10.0),
@@ -228,18 +259,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const SizedBox(width: 20),
                   Column(
-                    children:  [
+                    children: [
                       InkWell(
                         child: const CircleAvatar(
                           radius: 20.0,
-                            backgroundImage: AssetImage('images/assignments.png'),
+                          backgroundImage: AssetImage('images/assignments.png'),
                           backgroundColor: Colors.transparent,
                         ),
-                        onTap:  () {
-                    print("Live session");
-                  },
+                        onTap: () {
+                          print("Live session");
+                        },
                       ),
-                       const SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
                       const Text(
@@ -250,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(width: 55),
                   Column(
-                    children:  [
+                    children: [
                       InkWell(
                         child: const CircleAvatar(
                           foregroundColor: Colors.white,
@@ -258,11 +289,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           backgroundImage: AssetImage('images/material.png'),
                           backgroundColor: Colors.white,
                         ),
-                        onTap:  () {
-                    print("Materials");
-                  },
+                        onTap: () {
+                          print("Materials");
+                        },
                       ),
-                     const SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
                       const Text("Materials",
@@ -271,7 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(width: 55),
                   Column(
-                    children:  [
+                    children: [
                       InkWell(
                         child: const CircleAvatar(
                           radius: 20.0,
@@ -279,8 +310,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           backgroundColor: Colors.transparent,
                         ),
                         onTap: () {
-                    print("Assignments");
-                  },
+                          print("Assignments");
+                        },
                       ),
                       const SizedBox(
                         height: 6,
@@ -302,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SingleChildScrollView(
           child: Container(
             height: 45.0,
-          
+
             // padding: const EdgeInsets.all(10.0),
             // margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -311,7 +342,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Row(
               children: [
-                SizedBox(width: 200),        
+                SizedBox(width: 200),
                 TextButton(
                   onPressed: () {
                     print("DashBoard");
@@ -324,7 +355,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(width: 50),
+                const SizedBox(width: 50),
                 TextButton(
                   onPressed: () {
                     print("Assignments");
@@ -337,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(width: 50),
+                const SizedBox(width: 50),
                 // Text("Assignments",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
                 TextButton(
                   onPressed: () {
@@ -351,8 +382,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                 ),
-                
-                SizedBox(width: 50),
+
+                const SizedBox(width: 50),
                 TextButton(
                   onPressed: () {
                     print("Calender");
@@ -365,7 +396,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(width: 50),
+                const SizedBox(width: 50),
                 TextButton(
                   onPressed: () {
                     print("Chat");
@@ -384,81 +415,70 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ]);
 
-
-
-
-      Widget taskBatch(BuildContext context, {required CardItem1 item1}) => Container(
-    margin: const EdgeInsets.fromLTRB(0,0,0,0),
-    
-        height: 120,
-        width: 280,
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 252, 242, 236),
-          border:
-              Border.all(color: Color.fromARGB(255, 252, 226, 209), width:3 ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
+  Widget taskBatch(BuildContext context, {required CardItem1 item1}) =>
+      Container(
+          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+          height: 120,
+          width: 280,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 252, 242, 236),
+            border:
+                Border.all(color: Color.fromARGB(255, 252, 226, 209), width: 3),
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(children: [
               SizedBox(
                 height: 50,
                 // color: Colors.red,
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0,10,0,0),
-                  child: Row( children: [
-                   
-                     const SizedBox(
-                        height: 80,
-                        width: 40,
-                        child: Image(
-                          image: AssetImage('images/img.png'),
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Row(children: [
                     const SizedBox(
-                        width: 10,),
-                     Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item1.title,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.indigo,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            item1.subtitle,
-                            style: const TextStyle(
-                                fontSize: 10, color: Colors.indigoAccent),
-                          ),
-                        ],
+                      height: 80,
+                      width: 40,
+                      child: Image(
+                        image: AssetImage('images/img.png'),
+                        fit: BoxFit.scaleDown,
                       ),
-                    
-                  ]
-                  ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          item1.title,
+                          style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.indigo,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          item1.subtitle,
+                          style: const TextStyle(
+                              fontSize: 10, color: Colors.indigoAccent),
+                        ),
+                      ],
+                    ),
+                  ]),
                 ),
               ),
-              
-                 Align(
-                  alignment: Alignment.topRight,
-                  child: ElevatedButton(
+              Align(
+                alignment: Alignment.topRight,
+                child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('View All',style: const TextStyle(
-                              fontSize: 10)),
+                    child:
+                        Text('View All', style: const TextStyle(fontSize: 10)),
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size(70, 30),
                         primary: Color.fromARGB(163, 252, 156, 46))),
-                ),
-              
+              ),
             ]),
-            
-          
-        )
-        );
+          ));
 }
